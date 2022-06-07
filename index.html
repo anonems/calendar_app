@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALENDRIER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+</head>
+<header class="headbar">
+    <script>   
+        let date = new Date().toDateString();
+        document.write(date)
+    </script>
+</header>
+<body>
+
+    <!-- today -->
+    <section class="today" id="stoday">
+        <table>
+
+            <tbody id="bodt">
+                <script>
+                    for (let i = 0; i < 25; i++){
+                        if (i<10){
+                            document.write("<tr><td>0"+i+"H00</td><td>Aucun événement prévu.</td></tr>")
+                        }else{
+                            document.write("<tr><td>"+i+"H00</td><td>Aucun événement prévu.</td></tr>")
+                    }
+                }
+                </script>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- schedule -->
+    <section class="Schedule" id="sschedule">
+        ok
+    </section>
+
+    <!-- setting -->
+    <section class="setting" id="ssetting">
+        <button class="dnmode" onclick="myFunction()"><span class="material-symbols-outlined">
+            dark_mode
+            </span></button>
+            <script>
+                function myFunction() {
+                 var element = document.body;
+                element.classList.toggle("dark-mode");
+                }
+            </script>
+    </section>
+
+
+</body>
+<footer>
+    <nav class="navbar">
+        <button id="today" class="nbuton"><span class="material-symbols-outlined">
+            today
+            </span> Today</button>
+        <button id="schedule" class="nbuton"><span class="material-symbols-outlined">
+            calendar_month
+            </span> Schedule</button>
+        <button id="setting" class="nbuton"><span class="material-symbols-outlined">
+            settings
+            </span> Setting</button>
+    </nav>
+    <script>
+        let bt1 = document.getElementById("today");
+        let bt2 = document.getElementById("schedule");
+        let bt3 = document.getElementById("setting");
+        let s1 = document.getElementById("stoday");
+        let s2 = document.getElementById("sschedule");
+        let s3 = document.getElementById("ssetting");
+        bt1.addEventListener("click", () => {
+            s1.style.display = "block";
+            s2.style.display = "none";
+            s3.style.display = "none";
+        })
+        bt2.addEventListener("click", () => {
+            s2.style.display = "block";
+            s1.style.display = "none";
+            s3.style.display = "none";
+        })
+        bt3.addEventListener("click", () => {
+            s3.style.display = "block";
+            s2.style.display = "none";
+            s1.style.display = "none";
+        })
+    </script>
+</footer>
+</html>
