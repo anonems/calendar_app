@@ -4,7 +4,7 @@ self.addEventListener('install', (e) => {
       caches.open('calendar_cache').then((cache) => cache.addAll([
         'index.html',
         'index.js',
-        '/style.css'
+        'style.css'
       ])),
     );
   });
