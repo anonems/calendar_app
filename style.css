@@ -115,3 +115,9 @@ tr:hover{
   background-color: white;
   color : #262618;
 }
+
+@media screen and (max-width: 800px) {
+#hdt{
+  display: none;
+}
+}
