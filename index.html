@@ -77,18 +77,28 @@
         let s1 = document.getElementById("stoday");
         let s2 = document.getElementById("sschedule");
         let s3 = document.getElementById("ssetting");
+        bt1.style.boxShadow = "0px -5px 0px 0px orange"
         bt1.addEventListener("click", () => {
             s1.style.display = "block";
+            bt1.style.boxShadow = "0px -5px 0px 0px orange"
+            bt2.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
+            bt3.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s2.style.display = "none";
             s3.style.display = "none";
         })
         bt2.addEventListener("click", () => {
             s2.style.display = "block";
+            bt2.style.boxShadow = "0px -5px 0px 0px orange"
+            bt3.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
+            bt1.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s1.style.display = "none";
             s3.style.display = "none";
         })
         bt3.addEventListener("click", () => {
             s3.style.display = "block";
+            bt3.style.boxShadow = "0px -5px 0px 0px orange"
+            bt2.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
+            bt1.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s2.style.display = "none";
             s1.style.display = "none";
         })
