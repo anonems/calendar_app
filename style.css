@@ -1,8 +1,8 @@
 body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #eeeee4;
-    margin-top: 60px;
-    margin-bottom: 55px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     position: relative;
     --colorone: #4EA5D9;
     --colortwo: #133C53;
@@ -28,7 +28,11 @@ body::-webkit-scrollbar {
   font-weight: bold;
 }
 .dark-mode .headbar{
-  color : #262618;
+  color : white;
+  background-color: var(--colortwo);
+  box-shadow: 0px 5px 0px 0px white;
+
+
 
 }
 footer {	position:fixed; /* fixe */
@@ -58,9 +62,7 @@ footer {	position:fixed; /* fixe */
     --colortwo:   #4EA5D9 ;
 
   }
-section{
-  transition: all 1s linear;
-}
+
 .nbuton{
     background-color: transparent;
     border : none;
@@ -86,7 +88,24 @@ section{
 .dnmode{
 border: none;
 background-color: transparent;
+position:fixed;
+right:5px
 }
+.ubtn:hover, .dnmode:hover{
+  color: var(--colorone);
+}
+
+.ubtn{
+  border: none;
+  background-color: transparent;
+  position:fixed;
+  left:5px;
+}
+.dark-mode .ubtn:hover,.dark-mode .dnmode:hover{
+  color: white;
+
+}
+
 #sschedule, #ssetting{
   display:none
 
@@ -111,9 +130,13 @@ tr{
 }
 .today tr:hover{
   background-color: white;
+  transition: all 0.2s ease-out;
+
 }
 .hspan:hover{
   background-color: white;
+  transition: all 0.2s ease-out;
+
 
 }
 .dark-mode .hspan:hover{
@@ -167,4 +190,12 @@ th{
 }
 span .calendardiv{
   padding: 50px;
+}
+@keyframes moveToRight {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0px);
+  }
 }

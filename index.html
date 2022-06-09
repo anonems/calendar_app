@@ -10,14 +10,29 @@
     <link rel="manifest" href="manifest.webmanifest">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    
 </head>
+
 <header class="headbar">
+    <button class="ubtn" class="add-button"><span class="material-symbols-outlined">download</span></button>
     <script>   
         let date = new Date().toDateString();
         document.write(date)
     </script>
+            <button  class="dnmode" onclick="myFunction()"><span id="dark" class="material-symbols-outlined">dark_mode</span></button>
+            <script>
+                function myFunction() {
+                let element = document.body;
+                element.classList.toggle("dark-mode");
+
+                if (document.getElementById('dark').innerText=='light_mode'){
+                    document.getElementById('dark').innerHTML = 'dark_mode';
+                }else if (document.getElementById('dark').innerText=='dark_mode'){
+                    document.getElementById('dark').innerHTML = 'light_mode';
+                }
+                }
+            </script>
 </header>
+
 <body>
 
     <!-- today -->
@@ -91,17 +106,16 @@
 
     <!-- setting -->
     <section class="setting" id="ssetting">
-        <button class="add-button">Add to home screen</button>
+        <form action="">
+            <label for="">Utilisateur Actuel : </label>
+            <br><label for="">Notifications : </label>
+            <br><label for="">Couleur d'accentuation light : </label>
+            <br><label for="">Couleur d'accentuation dark : </label>
 
-        <button class="dnmode" onclick="myFunction()"><span class="material-symbols-outlined">
-            dark_mode
-            </span></button>
-            <script>
-                function myFunction() {
-                 var element = document.body;
-                element.classList.toggle("dark-mode");
-                }
-            </script>
+
+        </form>
+
+
     </section>
 
 
@@ -133,7 +147,7 @@
             bt3.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s2.style.display = "none";
             s3.style.display = "none";
-            s1.style.transition = "transition: all 1s ease-out"
+            s1.style.animation = "moveToRight 0.5s ease-in-out"
         })
         bt2.addEventListener("click", () => {
             s2.style.display = "block";
@@ -142,6 +156,8 @@
             bt1.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s1.style.display = "none";
             s3.style.display = "none";
+            s2.style.animation = "moveToRight 0.5s ease-in-out"
+            
         })
         bt3.addEventListener("click", () => {
             s3.style.display = "block";
@@ -150,6 +166,7 @@
             bt1.style.boxShadow = "0px -5px 0px 0px var(--colortwo)"
             s2.style.display = "none";
             s1.style.display = "none";
+            s3.style.animation = "moveToRight 0.5s ease-in-out"
         })
     </script>
 </footer>
