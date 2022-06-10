@@ -59,7 +59,7 @@
     <section class="schedule" id="sschedule">
                 <script>
                     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                    const weekNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+                    const weekNames = ["Mond", "Tues", "Wedn", "Thur", "Frid", "Satu", "Sund"];
                     var jour = new Date().getDate();
                     var mois = new Date().getMonth()+1;
                     var ans = new Date().getFullYear();
@@ -170,4 +170,13 @@
         })
     </script>
 </footer>
+<script>
+    // Si le navigateur supporte les service workers
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+                console.log('Service Worker: Registered', registration);
+            });
+    }
+</script>
 </html>
