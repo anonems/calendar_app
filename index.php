@@ -20,18 +20,23 @@
         </script>
         <button  class="dnmode" onclick="myFunction()"><span id="dark" class="material-symbols-outlined">dark_mode</span></button>
         <script>
+            if (document.cookie.split(';')[0].split("=")[1]=="dark_mode"){
+                document.getElementById('dark').innerHTML = 'light_mode';
+            }else if(document.cookie.split(';')[0].split("=")[1]=="light_mode"){
+                document.getElementById('dark').innerHTML = 'dark_mode';
+            }
             function myFunction() {
             let element = document.body;
             element.classList.toggle("dark-mode");
-
-            if (document.getElementById('dark').innerText=='light_mode' or getCookie("cmode") == 'light_mode'){
+            if (document.getElementById('dark').innerText=='light_mode'){
                 document.cookie = "cmode = dark_mode";
                 document.getElementById('dark').innerHTML = 'dark_mode';
-            }else if (document.getElementById('dark').innerText=='dark_mode' getCookie("cmode") == 'dark_mode'){
-                document.cookie = "cmode = ligh_mode";
+            }else if (document.getElementById('dark').innerText=='dark_mode'){
+                document.cookie = "cmode = light_mode";
                 document.getElementById('dark').innerHTML = 'light_mode';
             }
             }
+
         </script>
     </header>
 
